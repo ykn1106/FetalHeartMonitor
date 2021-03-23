@@ -153,23 +153,11 @@ def grid_vertical(xaxis, taixin_yaxis, yali_yaxis, td_yaxis):
         )
     )
 
-    # scatter = (
-    #     Scatter()
-    #         .add_xaxis([])
-    #         .add_yaxis("胎动", td_yaxis, label_opts=opts.LabelOpts(is_show=False, color="#FFB400"))
-    #         .set_global_opts(
-    #         legend_opts=opts.LegendOpts(is_show=False),
-    #     )
-    # )
-
-
     # 把上面生成的两个图放进grid中并通过pos_top，pos_bottom, pos_left, pos_right设置其位置
     grid = (
         Grid(init_opts=opts.InitOpts(width="3000px", height="600px"))
-        # .add(bar, grid_opts=opts.GridOpts(pos_top='5%', pos_bottom="50%", pos_right='50%'))
         .add(line2, grid_opts=opts.GridOpts(pos_top='60%', pos_left='2%'))
         .add(line1, grid_opts=opts.GridOpts(pos_bottom="60%", pos_left='2%'))
-        # .add(scatter, grid_opts=opts.GridOpts(pos_bottom="60%", pos_left='2%'))
     )
     # 生成到本地网页形式打开，也可自己设置保存成png图片，因为网页的使用更方便，自己按情况使用
     grid.render('1.html')
